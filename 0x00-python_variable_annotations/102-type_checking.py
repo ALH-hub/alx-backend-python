@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """Type-annotated function zoom_array that takes a Tuple lst"""
 from typing import Tuple, List
