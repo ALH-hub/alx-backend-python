@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Type-annotated function zoom_array that takes a tuple lst as argument"""
-from typing import Tuple
+from typing import Tuple, List
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """Return a tuple of tuples"""
     zoomed_in: Tuple = tuple(item for item in lst
-                             for i in range(factor))
+                             for i in range(int(factor)))
     return zoomed_in
 
 
