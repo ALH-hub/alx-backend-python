@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Define variables a, pi, i_understand_annotations, school."""
 
 a: int = 1
