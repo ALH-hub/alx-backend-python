@@ -4,7 +4,6 @@ from client import GithubOrgClient
 from parameterized import parameterized
 from unittest.mock import patch, Mock, PropertyMock
 from unittest import TestCase, main
-import client
 
 
 class TestGithubOrgClient(TestCase):
@@ -18,7 +17,9 @@ class TestGithubOrgClient(TestCase):
         """test the org method"""
         test_class = GithubOrgClient(org_name)
         test_class.org()
-        mock_get_json.assert_called_once_with(f"https://api.github.com/orgs/{org_name}")
+        mock_get_json.assert_called_once_with(
+            f"https://api.github.com/orgs/{org_name}")
+
 
 if __name__ == "__main__":
     main()
