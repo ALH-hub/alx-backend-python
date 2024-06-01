@@ -20,7 +20,7 @@ class TestAccessNestedMap(unittest.TestCase):
 
     @parameterized.expand([
         ({}, ("a",), KeyError),
-        ({"a": 1}, ("a", "b"), KeyError),
+        ({"za": 1}, ("a", "b"), KeyError),
     ])
     def test_access_nested_map_exception(self, nested_map, path, expected):
         """Test access_nested_map function."""
@@ -39,6 +39,7 @@ class TestGetJson(unittest.TestCase):
         with unittest.mock.patch('requests.get') as mock_get:
             mock_get.return_value.json.return_value = test_payload
             self.assertEqual(get_json(test_url), test_payload)
+            mock_get.assert_called_once_with(test_url)
 
 
 if __name__ == "__main__":
